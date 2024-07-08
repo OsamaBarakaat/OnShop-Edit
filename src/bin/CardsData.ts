@@ -25,7 +25,7 @@ export const cardsData = [
       },
       {
         id: 300,
-        name: "Prodcuts",
+        name: "Products",
         images: [
           "https://res.cloudinary.com/dgswngo1l/image/upload/v1720340304/aa/p11_gyrkvv.png",
           "https://res.cloudinary.com/dgswngo1l/image/upload/v1720340474/aa/p22_puppds.png",

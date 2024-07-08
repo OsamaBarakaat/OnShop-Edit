@@ -85,21 +85,15 @@ const DndExample = () => {
 
   return (
     <DndContext onDragEnd={onDragEnd}>
-      <h1 className="text-center mt-8 mb-3 font-bold text-[25px] ">
-        Edit Your Store
-      </h1>
-      <div className="flex gap-4 justify-between my-20 mx-4 flex-col lg:flex-row">
+      <div className="flex gap-4 justify-between py-16 px-4 flex-col lg:flex-row">
         <Droppable droppableId={`droppable0`}>
           {(provided) => (
             <Accordion
               type="multiple"
-              className="w-full border border-gray-400 border-dashed p-4"
+              className="w-full p-4 w-2/6"
               {...provided.droppableProps}
               ref={provided.innerRef}
             >
-              <h2 className="text-center font-bold mb-6 text-black">
-                Drag from (Accordion)
-              </h2>
               {data[0].components.map((component, index) => (
                 <AccordionItem key={component.id} value={component.name}>
                   <AccordionTrigger>{component.name}</AccordionTrigger>
@@ -112,7 +106,7 @@ const DndExample = () => {
                       >
                         {(provided) => (
                           <div
-                            className="bg-gray-200 mx-1 px-4 py-3 my-3"
+                            className="my-3"
                             {...provided.dragHandleProps}
                             {...provided.draggableProps}
                             ref={provided.innerRef}
@@ -133,7 +127,7 @@ const DndExample = () => {
         <Droppable droppableId={`droppable1`}>
           {(provided) => (
             <div
-              className="p-5 w-full bg-white border-gray-400 border border-dashed"
+              className="p-5 w-full bg-white "
               {...provided.droppableProps}
               ref={provided.innerRef}
             >
@@ -148,7 +142,7 @@ const DndExample = () => {
                 >
                   {(provided) => (
                     <div
-                      className="bg-gray-200 mx-1 px-4 py-3 my-3"
+                      className="py-3 my-3 mx-0 px-0"
                       {...provided.dragHandleProps}
                       {...provided.draggableProps}
                       ref={provided.innerRef}
@@ -169,14 +163,6 @@ const DndExample = () => {
             </div>
           )}
         </Droppable>
-      </div>
-      <div className="flex justify-center mt-4">
-        <button
-          onClick={handleSave}
-          className="bg-blue-500 text-white px-4 py-2 rounded"
-        >
-          Save
-        </button>
       </div>
     </DndContext>
   );
